@@ -44,3 +44,20 @@ sched_setscheduler: Ok
 $ python3 -c 'print(0x00000000a88425fb & (1 << 23))'
 8388608
 ```
+
+Deploy a [kubernetes pod](cap-sys-nice-docker.yml):
+
+```sh
+$ kubectl apply -f https://raw.githubusercontent.com/fornwall/cap-sys-nice-docker/main/cap-sys-nice-docker.yml
+[..]
+$ kubectl logs cap-sys-nice-docker
+[..]
+```
+
+Note that this pod specifies the following security context for the container:
+
+```yml
+securityContext:
+  capabilities:
+    add: ["SYS_NICE"]
+```

@@ -4,7 +4,7 @@ metadata:
   name: cap-sys-nice-docker
 spec:
   containers:
-  - name: sec-ctx-4
+  - name: cap-sys-nice-docker
     image: fredrikfornwall/cap-sys-nice-docker:0.1
     securityContext:
       capabilities:
