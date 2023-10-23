@@ -3,7 +3,7 @@ Small docker image to experiment with [`CAP_SYS_NICE`](https://man7.org/linux/ma
 
 The [entry point](entrypoint.sh) inspects `/proc/1/status` for `Cap*:` entries and then executes a [small C program](set-scheduler.c) that tries to call [sched_setscheduler()](https://man7.org/linux/man-pages/man2/sched_setscheduler.2.html) to set the `SCHED_FIFO` "real-time" scheduling policy.
 
-A x86-64 build is [published to docker hub](https://hub.docker.com/r/fredrikfornwall/cap-sys-nice-docker). To build locally:
+A x86-64 image is [published to docker hub](https://hub.docker.com/r/fredrikfornwall/cap-sys-nice-docker). To build locally:
 
 ```sh
 $ docker build --tag fredrikfornwall/cap-sys-nice-docker:0.1 .
